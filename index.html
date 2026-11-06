@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta mane"viewport" content="width=device-width, initial-scale=1 viewport-fit=cover">
+<title>Where Am I</title>
+<meta name="description" content="Find out where you are using your device's GPS.'">
+<meta name="theme-color content="#0f172a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Splash page -->
+  <div id="splash" role="status" aria-label="Loading">
+    <div class="splash-inner">
+      <div class="pin-wrap">
+        <span class="pulse"></span><span class="pulse delay"></span>
+        <svg class="pin" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.500a2.5 2.5 0 0 1 0 5z"/>
+        </svg>
+      </div>
+<h1>Where Am I</h1>
+<p>Finding your place in the world</p>
+</div>
+</div>
+<main id="app" hidden>
+<header>
+<h2>Where Am I</h2>
+<span id="status-pill" class="pill">Idle</span>
+</header>
+<section class="card hero">
+<p class="label">Your location</p>
+<p id="address" class="address">Tap the button to find out.</p>
+<p id="coords" class="coords"></p>
+<button id="locate" class="primary">&#128205;Locate me</button>
+<label class="toggle">
+<input type="checkbox" id="track">
+<span>Keep tracking as I move</span>
+</label>
+<p id="error" class="error" role="alert" hidden></p>
+</section>
+
+<section class="card grid" id="details" hidden>
+<div>
+<p class="label">Latitude</p><p id="lat">&endash;</p>
+</div>
+<div>
+<p class="label">Longitude</p><p id="lon">&endash;</p>
+</div>
+<div>
+<p class="label">Accuracy</p><p id="acc">&endash;</p>
+</div>
+<div>
+<p class="label">Altitude</p><p id="alt">&endash;</p>
+</div>
+<div>
+<p class="label">Speed</p><p id="spd">&endash;</p>
+</div>
+<div>
+<p class="label">Heading</p><p id="hdg">&endash;</p>
+</div>
+<div class="wide">
+<p class="label">Last updated</p><p id="time">&endash;</p>
+</div>
+</section>
+<section class="actions" id="actions" hidden>
+<button id="copy" class="secondary">Copy coordinates</button>
+<a id="maplink" class="secondary" target="_blank" rel="noopener">Open in maps</a>
+<button id="share" class="secondary" hidden>Share</button>
+</section>
+<button id="install" class="primary install" hidden>&downarrow; Install app</button>
+<p id="offline" class="note hidden">You're offline - GPS still works, but the street address needs a connection.</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
